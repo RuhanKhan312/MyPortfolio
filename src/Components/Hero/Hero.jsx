@@ -2,6 +2,11 @@ import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { SiGmail } from "react-icons/si";
+import { FaMedium } from "react-icons/fa";
+import { FaStackOverflow } from "react-icons/fa6";
 
 const navigation = [
   { name: 'Home', href: '#' },
@@ -15,7 +20,7 @@ export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="bg-white">
+    <div className="bg-white py-0">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
@@ -112,7 +117,7 @@ export default function Example() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-40">
           
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -122,8 +127,13 @@ export default function Example() {
               I am a Front-end/Full-Stack Software developer. I am currently learning and working with
               MERN, and Flutter as well. I am looking to collaborate on software projects.
             </p>
-            <div className="flex justify-center items-center w-1/2">
-                <FaFacebook />
+            <div className="flex justify-center items-center w-full h-9 text-size mt-6 space-x-3">
+                <FaGithub className="text-4xl drop-shadow-sm cursor-pointer"/>
+                <FaLinkedin className="text-4xl drop-shadow-sm cursor-pointer" />
+                <SiGmail className="text-4xl drop-shadow-sm cursor-pointer" />
+                <FaFacebook className="text-4xl drop-shadow-sm cursor-pointer"/>
+                <FaMedium className="text-4xl drop-shadow-sm cursor-pointer" />
+                <FaStackOverflow className="text-4xl drop-shadow-sm cursor-pointer" />
             </div>
             
             <div className="mt-10 flex items-center justify-center gap-x-6">
