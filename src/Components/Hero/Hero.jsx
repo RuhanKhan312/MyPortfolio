@@ -7,24 +7,35 @@ import { FaLinkedin } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaMedium } from "react-icons/fa";
 import { FaStackOverflow } from "react-icons/fa6";
+import Resume from '../../Assets/Ruhan Khan Resume.pdf'
 
 const navigation = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Services', href: '#' },
-  { name: 'Project', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Home', href: '#Hero' },
+  { name: 'About', href: '#Skills' },
+  // { name: 'Services', href: '#' },
+  { name: 'Project', href: '#'},
+  { name: 'Contact', href: '#Contact' },
 ]
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  const onButtonClick = () => {
+    const pdfUrl = "Sample.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "document.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="bg-white py-0">
+    <div id='Hero' className="bg-white py-0">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5 font-extrabold">&#60;Ruhan Khan&#62;
+            <a onClick={() => window.location.reload(false)} className="-m-1.5 p-1.5 font-extrabold cursor-pointer">&#60;Ruhan Khan&#62;
               {/* <span className="sr-only ">Your Company</span> */}
               {/* <img
                 className="h-8 w-auto"
@@ -45,7 +56,7 @@ export default function Example() {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+              <a key={item.name} href={item.href}  onClick={() => window.location.replace("/#Skills")} onClick={() => window.location.replace("/#Skills")} className="text-sm font-semibold leading-6 text-gray-900">
                 {item.name}
               </a>
             ))}
@@ -117,7 +128,7 @@ export default function Example() {
             }}
           />
         </div>
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-40">
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-32">
           
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
@@ -128,22 +139,21 @@ export default function Example() {
               MERN, and Flutter as well. I am looking to collaborate on software projects.
             </p>
             <div className="flex justify-center items-center w-full h-9 text-size mt-6 space-x-3">
-                <FaGithub className="text-4xl drop-shadow-sm cursor-pointer"/>
-                <FaLinkedin className="text-4xl drop-shadow-sm cursor-pointer" />
-                <SiGmail className="text-4xl drop-shadow-sm cursor-pointer" />
-                <FaFacebook className="text-4xl drop-shadow-sm cursor-pointer"/>
-                <FaMedium className="text-4xl drop-shadow-sm cursor-pointer" />
-                <FaStackOverflow className="text-4xl drop-shadow-sm cursor-pointer" />
+                <a href="https://github.com/RuhanKhan312"> <FaGithub className="text-4xl drop-shadow-sm cursor-pointer"/> </a>
+                <a href="https://www.linkedin.com/in/ruhan-khan-633969268/"> <FaLinkedin className="text-4xl drop-shadow-sm cursor-pointer" /> </a>
+                <a> <SiGmail className="text-4xl drop-shadow-sm cursor-pointer" /> </a>
+                <a href="https://medium.com/@khanruhan312"> <FaMedium className="text-4xl drop-shadow-sm cursor-pointer" /> </a>
+                <a href="https://stackoverflow.com/users/23154941/ruhankhan312"> <FaStackOverflow className="text-4xl drop-shadow-sm cursor-pointer" /> </a>
             </div>
             
-            <div className="mt-10 flex items-center justify-center gap-x-6">
+            <div className="mt-9 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href={Resume} download={Resume} target="_blank"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Download Resume
               </a>
-              <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+              <a onClick={() => window.location.replace("/#Contact")} className="text-sm font-semibold leading-6 text-gray-900 cursor-pointer">
                 Contact me <span aria-hidden="true">→</span>
               </a>
             </div>

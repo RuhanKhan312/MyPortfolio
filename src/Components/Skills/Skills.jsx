@@ -15,7 +15,7 @@ import { Link } from 'react-router-dom';
 
 const Skills = () => {
   return (
-    <div className="min-h-[550px] flex justify-center items-center py-12 sm:py-0  dark:bg-gray-950 dark:text-white">
+    <div id='Skills' className="min-h-[550px] flex justify-center items-center py-8 sm:py-0  dark:bg-gray-950 dark:text-white">
         <div className="container">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-center">
                 <div data-aos="zoom-in">
